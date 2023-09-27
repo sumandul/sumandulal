@@ -8,7 +8,7 @@ export function ConnectMedia() {
 	return (
 		<LazyMotion features={domAnimation}>
 			<m.nav role="menu" initial={initial} animate={animate} exit={exit} transition={transition}>
-				<ul className="  flex    flex-col py-4 px-4  rounded-full bg-white items-center gap-5">
+				<ul className="  flex    flex-col py-4 px-2  rounded-full bg-white items-center gap-5">
 					{SOCIAL_MEDIA.map((item) => (
 						<li key={item.id}>
 							<a
