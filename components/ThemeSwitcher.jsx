@@ -21,13 +21,13 @@ export const ThemeSwitcher = () => {
 	return (
 		<LazyMotion features={domAnimation}>
 			<m.button
-				onClick={() => setTheme(currentTheme === "dark" ? "dark" : "dark")}
+				onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
 				initial={initial}
 				animate={animate}
 				exit={exit}
 				transition={transition}
 			>
-				{/* {currentTheme === "dark" ? <BsSun /> : <BsMoon />} */}
+				{currentTheme === "dark" ? <BsSun /> : <BsMoon />}
 			</m.button>
 		</LazyMotion>
 	);
