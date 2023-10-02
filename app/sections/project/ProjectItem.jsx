@@ -30,17 +30,20 @@ export function ProjectItem({ project, index }) {
 				transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${index === 0 ? 0 : 25 * index}ms`
 			}}
 		>
+		
 			<figure>
 				<div className="aspect-[12/9.2] w-full h-full">
 					<Suspense fallback={<Loader />}>
-						<ImageGallery
+						{/* hello
+						<img src="../p.png"/> */}
+						{/* <ImageGallery
 							items={galleryImages}
 							showPlayButton={false}
 							showThumbnails={false}
 							showIndex
 							lazyload
 							additionalClass="gallery-item"
-						/>
+						/> */}
 					</Suspense>
 				</div>
 			</figure>

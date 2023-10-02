@@ -33,6 +33,7 @@ export function Menu({ onClick = () => {} }) {
 						>
 							{menuItem.name}
 						</a>
+					
 					</li>
 				))}
 			</ul>

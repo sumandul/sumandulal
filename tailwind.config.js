@@ -8,6 +8,16 @@ module.exports = {
 	darkMode: "class",
 	theme: {
 		extend: {
+			keyframes: {
+				wave: {
+				  '0%': { transform: 'rotate(0deg)' },
+				
+				  '100%': { transform: 'rotate(360deg)' },
+				},
+			  },
+			  animation: {
+				'waving-hand': 'wave 2s linear infinite',
+			  },
 			colors: {
 				brand: {
 					light: "#FBF8F3",

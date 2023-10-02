@@ -11,6 +11,7 @@ export const ThemeSwitcher = () => {
 	const { theme, setTheme, systemTheme } = useTheme();
 
 	const currentTheme = theme === "system" ? systemTheme : theme;
+	console.log(currentTheme,'ss')
 
 	useEffect(() => setMounted(true), []);
 
@@ -21,7 +22,7 @@ export const ThemeSwitcher = () => {
 	return (
 		<LazyMotion features={domAnimation}>
 			<m.button
-				onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
+				onClick={() => setTheme(currentTheme === "dark" ? "dark" : "dark")}
 				initial={initial}
 				animate={animate}
 				exit={exit}

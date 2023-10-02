@@ -15,7 +15,10 @@ export function HeadingDivider({ title = "" }) {
 					transition={transition}
 					className="heading-divider"
 				>
-					About <span className=" text-[#44B24A]">Me</span>
+					{
+						!title.includes("Project") ?<>About <span className=" text-[#44B24A]">Skill</span></>:<>My <span className=" text-[#44B24A]">Project</span></>
+					}
+					
 				</m.h2>
 			</LazyMotion>
 		</header>

@@ -11,7 +11,7 @@ export function AboutSection() {
 
 	return (
 		<LazyMotion features={domAnimation}>
-			<section id="about" className="section">
+			{/* <section id="about" className="section">
 				<HeadingDivider title="About me" />
 				<div className="pt-10 pb-16 max-w-5xl flex flex-col gap-3">
 					<div
@@ -53,7 +53,59 @@ export function AboutSection() {
 				</div>
 
 				<TimeLine />
-			</section>
+			</section> */}
+			<div className="  grid grid-cols-2">
+				<div className=" border-l-[2px]  px-8   border-[#44B24A]">
+					<div>
+						<h2 className="  font-bold text-2xl">My Experience</h2>
+						<div className=" mt-5 border-l-[2px] px-5   border-[#44B24A]">
+
+							<h3 className=" text-xl  font-semibold">
+
+								Web development Training
+							</h3>
+							<span className=" text-sm  text-green-200">		Brodway Infosys / April 2020 - Aug 2020</span>
+
+						</div>
+						<div className=" mt-5 border-l-[2px] px-5   border-[#44B24A]">
+
+							<h3 className=" text-xl  font-semibold">
+
+								Front-End Developer
+							</h3>
+							<span className=" text-sm  text-green-200">		Supreme IT Solution Pvt Ltd / Jan 2021 - April 2022</span>
+
+						</div>
+						<div className=" mt-5 border-l-[2px] px-5   border-[#44B24A]">
+
+<h3 className=" text-xl  font-semibold">
+
+	React /Next JS Developer
+</h3>
+<span className=" text-sm  text-green-200">Zapp Services Pvt Ltd / Jun 2022  - Present</span>
+
+</div>
+					</div>
+				</div>
+
+				<div className=" border-l-[2px] h-[5rem] px-8   border-[#44B24A]">
+					<div>
+						<h2 className="  font-bold text-2xl">My Educatiom</h2>
+						<div className=" mt-5 border-l-[2px] h-[5rem] px-5   border-[#44B24A]">
+
+							<h3 className=" text-xl  font-semibold">
+
+								Bachlor in Computer Science and Information Technology(Bsc CSIT)
+							</h3>
+							<span className=" text-sm  text-green-200">		Patan Multipal Campus / 2018 - 2022</span>
+
+						</div>
+					</div>
+				</div>
+				<div>
+
+				</div>
+			</div>
 		</LazyMotion>
 	);
 }

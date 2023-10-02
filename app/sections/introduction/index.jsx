@@ -124,13 +124,23 @@ export function WelcomeSection() {
 							</Link>
 						</div>
 					</div>
-				<div className=" bg-red-700">
+					{/* <div className=" bg-red-700">
 				<FacebookProvider appId="722685486336368" chatSupport>
-						<CustomChat pageId="126124160589641" minimized={true} />
+						<CustomChat    pageId="126124160589641" minimized={true} />
 					</FacebookProvider>
-				</div>
+				</div> */}
+					<div>
+						<div className=" w-[30rem] h-[30rem]  overflow-hidden flex justify-end items-start p-10  bg-green-100 rounded-full">
 
-					{isTabletUp && <WelcomeAnimation />}
+							<div className="w-[30rem]  bg-red-600 h-[30rem]   a rounded-full">
+								<img src="../p.jpg" className=" object-cover  w-full h-full  rounded-full" />
+							</div>
+						</div>
+
+
+					</div>
+
+					{/* {isTabletUp && <WelcomeAnimation />} */}
 				</div>
 			</section>
 		</LazyMotion>

@@ -12,7 +12,7 @@ export function TechnologiesSection() {
 	return (
 		<LazyMotion features={domAnimation}>
 			<section id="tech" className="section">
-				<HeadingDivider title="Technologies" />
+				<HeadingDivider title="Technologies HELLO" />
 				<p
 					ref={textRef}
 					tabIndex="0"
@@ -27,7 +27,7 @@ export function TechnologiesSection() {
 				</p>
 
 				{!!TECHNOLOGIES.length && (
-					<div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
+					<div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-10">
 						{TECHNOLOGIES.map((tech, index) => {
 							return (
 								<div
@@ -50,7 +50,7 @@ export function TechnologiesSection() {
 									<div className="flex items-center flex-wrap gap-x-5 gap-y-8">
 										{tech.items.map((item) => (
 											<div key={item.name} className="group relative flex">
-												<span tabIndex="0" role="img">
+												<span tabIndex="0" role="img" className="  text-green-500">
 													{item.icon}
 												</span>
 												<span
