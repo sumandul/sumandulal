@@ -9,6 +9,8 @@ import { FiExternalLink } from "react-icons/fi";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 export function ProjectItem({ project, index }) {
+	alert("hello")
+	console.log("project")
 	const { description, images, liveUrl, repoUrl, stack, title } = project;
 	const cardRef = useRef(null);
 	const isInView = useInView(cardRef, { once: true });

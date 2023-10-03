@@ -1,5 +1,6 @@
 import { Suspense, useRef } from "react";
 import { domAnimation, LazyMotion, useInView } from "framer-motion";
+import Slider from "react-slick";
 import Link from "next/link";
 import useSWR from "swr";
 import { HeadingDivider, Loader } from "components";
@@ -8,104 +9,81 @@ import Error from "../../error";
 import { ErrorBoundary } from "react-error-boundary";
 import { Projects } from "../../projects/components/Projects";
 import { SITE_ROUTES } from "../../../constants";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const url = `${process.env.NEXT_PUBLIC_SANITY_URL}${process.env.NEXT_PUBLIC_SANITY_LATEST_PROJECTS}`;
 
 export function ProjectsSection() {
-	// const btnRef = useRef(null);
-	// const isBtnInView = useInView(btnRef, { once: true });
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+	margin:30,
+    slidesToScroll: 1
+  };
 
-	// const { data, error } = useSWR(url, fetcher);
-	// const projects = data?.result;
+  const projects = [
+    {
+      title: "E-Commerce",
+      src: "../s.png",
+	  toolbar:["React","Next JS" ,"Redex JS","Tailwind"],
+	  link:"https://www.salesberry.com.np/"
+    },
+    {
+      title: "FoodMenu",
+      src: "../fo.png",
+	  toolbar:["React","Next JS" ,"Redex JS","Tailwind"],
+	  link:"https://www.salesberry.com.np/"
+    },
+    {
+      title: "IdeaForNepal",
+      src: "../ide.png",
+	  toolbar:["React","Next JS" ,"Redex JS","Tailwind"],
+	  link:"https://ideafornepal.com/"
+    }
+  ];
 
-	// if (error && !data) {
-	// 	return null;
-	// }
+  return (
+    <LazyMotion features={domAnimation}>
+      <section id="projects" className="section">
+        <HeadingDivider title="My Projects" />
+        <div className="h-10 md:h-14" />
 
-	return (
-		<LazyMotion features={domAnimation}>
-			<section id="projects" className="section">
-				<h2>
-					
-				</h2>
-				 <HeadingDivider title="My Project" /> 
-				<div className="h-10 md:h-14" /> 
-				
-
-			 <div className=" grid grid-cols-2  items-center gap-8 md:gap-14">
-					<div>
-<div className="    bg-[#2D2C3B] rounded-lg overflow-hidden p-12  shadow-2xl">
-
-<div className=" bg-black">
-
-<img src="../s.png" />
-
-
-</div>
-<h3 className=" text-green-500 text-center  font-bold text-2xl mt-10  ">E-Commerece</h3>
-<div className=" flex justify-center my-10">
-
-<div className=" flex gap-4 ">
-<span className=" bg-[#484A59] p-2 rounded-lg">Next</span>
-<span className=" bg-[#484A59] p-2 rounded-lg">React</span>
-<span className=" bg-[#484A59] p-2 rounded-lg">Redux</span>
-<span className=" bg-[#484A59] p-2 rounded-lg">Tailwind </span>
-
-</div>
-</div>
-<div className=" flex justify-between items-center ">
-{/* <button className="  border-[2px] border-green-500  text-green-500  px-2 py-2 w-full">Detail</button> */}
-
-<div className=" flex justify-c w-full"> <Link href={'https://www.salesberry.com.np/'}><button className="  border-[2px] border-green-500  text-green-500  rounded-lg  px-4 py-2 w-full"> Live Preview</button></Link></div>
-
-</div>
-
-</div>
-{/* <div className="   rounded-lg  p-4 bg-white">
-
-<div className=" bg-black">
-
-<img src="../s.png"/>
-
-
-</div>
-
-
-
-
-</div> */}
-
-
-
-					</div>
-					{/* <Suspense
-						fallback={
-							<div className="flex-center">
-								<Loader />
-							</div>
-						}
-					>
-						<ErrorBoundary FallbackComponent={Error}>
-							<Projects projects={projects} />
-						</ErrorBoundary>
-					</Suspense>
-
-					<Link
-						href={SITE_ROUTES.projects}
-						tabIndex={-1}
-						aria-label="Go to projects page"
-						ref={btnRef}
-						className="btn"
-						style={{
-							transform: btnRef ? "none" : "translateX(-50px)",
-							opacity: isBtnInView ? 1 : 0,
-							transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-						}}
-					>
-						<button aria-label="See more projects" className="">More projects</button>
-					</Link> */}
-				</div> 
-			</section>
-		</LazyMotion>
-	);
+        <Slider {...settings}>
+          {projects.map((item, i) => (
+            <div key={i}>
+              <div className="border-green-500 mx-10 bg-[#2D2C3B] rounded-tr-[100px] rounded-bl-[100px] overflow-hidden p-12 hover:bg-green-100 transform duration-300 shadow-2xl">
+                <div className="bg-black">
+                  <img src={item.src} alt={item.title} />
+                </div>
+                <h3 className="text-green-500 text-center font-bold text-2xl mt-10">
+                  E-{item.title}
+                </h3>
+                <div className="flex justify-center my-10">
+                  <div className="flex gap-4 ">
+					{
+						item.toolbar.map((data,i)=> <span className="bg-[#484A59] p-2 rounded-lg">{data}</span>)
+					}
+                   
+                
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <div className="flex justify-center w-full">
+                    <Link href={item.link}>
+                      <button className="border-[2px] border-green-500 text-green-500 rounded-lg px-4 py-2 w-full">
+                        Live Preview
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </section>
+    </LazyMotion>
+  );
 }
